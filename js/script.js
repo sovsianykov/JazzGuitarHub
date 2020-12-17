@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
                 wrapper.innerHTML = xhttp.responseText;
             }
         });
-        xhttp.open("GET", " Access-Control-Allow-Origin:https://github.com/sovsianykov/JazzGuitarHub/blob/main/img.txt", true);
+        xhttp.open("GET", "https://sovsianykov.github.io/img/scrs/y1.jpg", true);
         xhttp.send();
         let wrapper = document.getElementById('wrapp');
         wrapper.innerHTML = xhttp.responseText;
