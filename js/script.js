@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
                 wrapper.innerHTML = xhttp.responseText;
             }
         });
-        xhttp.open("GET", "https://sovsianykov.github.io/img.txt", true);
+        xhttp.open("GET", "./img.txt", true);
         xhttp.send();
         let wrapper = document.getElementById('wrapp');
         wrapper.innerHTML = xhttp.responseText;
