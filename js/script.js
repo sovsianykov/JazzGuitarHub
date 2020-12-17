@@ -1,25 +1,22 @@
-window.addEventListener("load",(function(){let e=document.getElementById("scores"),t=new XMLHttpRequest;e.onmouseup=function(){t.open("GET","processing.php",!0),t.addEventListener("readystatechange",(function(){if(4==t.readyState&&200==t.status){document.getElementById("wrapp");welcome.innerHTML=t.responseText}})),t.open("GET","http://http://localhost:3000/yankee_blues.html",!1),t.send(),document.getElementById("wrapp").innerHTML=t.responseText}}));
-//# sourceMappingURL=script.js.map
-function easyHTTP() {
+window.addEventListener("load", function () {
+    let scoresBtn = document.getElementById('scores');
+    let xhttp = new XMLHttpRequest();
+    scoresBtn.onmouseup = hover;
 
-    this.http = new XMLHttpRequest();
+    function hover() {
 
-}
-//MAKE an HTTP Get request
-easyHTTP.prototype.get = function  (url) {
-    this.http.open('GET', url , true ) ;
 
-    this.http.onload =   () => {
-        if (this.http.status === 200 )  {
-            console.log(this.http.responseText);
-        }
-
+        xhttp.open('GET', 'processing.php', true);
+        xhttp.addEventListener('readystatechange', function () {
+            if ((xhttp.readyState == 4) && (xhttp.status == 200)) {
+                let wrapper = document.getElementById('wrapp');
+                wrapper.innerHTML = xhttp.responseText;
+            }
+        });
+        xhttp.open("GET", "http://scores:2121/img.txt", false);
+        xhttp.send();
+        let wrapper = document.getElementById('wrapp');
+        wrapper.innerHTML = xhttp.responseText;
     }
 
-
-
-    this.http.send();
-}
-const http = new easyHTTP;
-// Get Posts
-http.get('//github.com/sovsianykov/JazzGuitarHub/blob/main/img/scrs/y1.jpg'); 
+})
