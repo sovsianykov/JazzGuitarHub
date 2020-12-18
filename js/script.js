@@ -20,3 +20,29 @@ window.addEventListener("load", function () {
     }
 
 })
+
+
+document.querySelector('#button').addEventListener(
+    'click', loadData
+);
+function loadData() {
+  const xhr = new XMLHttpRequest();
+  xhr.open( 'GET', 'plan.txt', true);
+
+  xhr.onload = function () {
+
+      if (this.status === 200) {
+          let p = document.createElement('p');
+
+          p.textContent = this.responseText;
+          console.log(this.responseText)
+
+
+       document.getElementById('output').appendChild(p);
+      }
+
+  }
+
+  xhr.send()
+}
+
